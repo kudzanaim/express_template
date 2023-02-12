@@ -8,3 +8,7 @@ app.get('/', (req, res) => {
 app.get('/ec2', (req, res) => {
   return res.send('Ec2 Instance - Working Fine (Created by Kudz Murefu)')
 })
+
+app.listen(() => {
+  console.log('Express App Started & listening...')
+}, 5000)
