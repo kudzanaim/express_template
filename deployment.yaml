@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ec2app-deployment
+  labels:
+    app: ec2app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ec2app
+  template:
+    metadata:
+      labels:
+        app: ec2app 
+    spec:
+      containers:
+      - name: ec2server
+        image: kudzmurefu/ec2:latest
+        ports:
+        - containerPort: 3000
